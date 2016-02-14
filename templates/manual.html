@@ -1,0 +1,33 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Manual HVAC Operation</h1>
+    <body>
+        <em> WARNING </em>
+        <p>You could possibly damage the HVAC system if used incorrectly.
+        You could turn on high heat and cooling at the same time.
+        You could turn on cooling in the middle of winter and ruin the condenser.</p>
+        <p><strong>USE AT YOUR OWN RISK!</strong></p>
+        
+        Outputs:
+        <ul>
+            <li>{% if hheat %} <strong>ON</strong> - <a href="/tstat/manualop/hheat/off">OFF</a>
+                {% else %} <a href="/tstat/manualop/hheat/on">ON</a> - <strong>OFF</strong>
+                {%endif%}--  High Heat
+            </li>
+            <li>{% if lheat %} <strong>ON</strong> - <a href="/tstat/manualop/lheat/off">OFF</a>
+                {% else %} <a href="/tstat/manualop/lheat/on">ON</a> - <strong>OFF</strong>
+                {%endif%}--  Low Heat
+            </li>
+            <li>{% if cool %} <strong>ON</strong> - <a href="/tstat/manualop/cool/off">OFF</a>
+                {% else %} <a href="/tstat/manualop/cool/on">ON</a> - <strong>OFF</strong>
+                {%endif%}--  Cooling
+            </li>
+            <li>{% if fan %} <strong>ON</strong> - <a href="/tstat/manualop/fan/off">OFF</a>
+                {% else %} <a href="/tstat/manualop/fan/on">ON</a> - <strong>OFF</strong>
+                {%endif%}--  Fan
+            </li>
+        </ul>
+    </body>
+{% endblock %}

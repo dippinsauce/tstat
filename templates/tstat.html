@@ -1,0 +1,21 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Thermostat</h1>
+    <body>
+        Select a mode:
+        <ul>
+            <li><a href="{{ url_for('auto') }}">Automatic</a></li>
+            <li><a href="{{ url_for('manual') }}">Manual</a></li>
+            <li><a href="{{ url_for('bypass') }}">Bypass</a></li>
+        </ul>
+        Output Status:
+        <ul>
+            <li>{% if hheat %} ON {% else %} OFF {%endif%}--  High Heat </li>
+            <li>{% if lheat %} ON {% else %} OFF {%endif%}--  Low Heat</li>
+            <li>{% if cool %} ON {% else %} OFF {%endif%}--  Cooling</li>
+            <li>{% if fan %} ON {% else %} OFF {%endif%}--  Fan</li>
+        </ul>
+    </body>
+{% endblock %}

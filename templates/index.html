@@ -1,0 +1,20 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Applications</h1>
+    <body>
+        <p><a href="{{ url_for('tstat') }}">Thermostat</a> -- able to bypass the wall thermostat and
+            directly operate the HVAC system.</p>
+        <p>others... maybe...</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p> created using:</p>
+        <a href="http://www.google.com/chrome"><img src="static/chrome.png" alt="Chrome by Google, Inc."></a>
+        <a href="http://flask.pocoo.org/"><img src="static/flask_icon.png" alt="Flask"></a>
+        <a href="http://www.python.org/"><img src="static/python_icon.png" alt="Python 2.7"></a>
+        <a href="http://notepad-plus-plus.org/"><img src="static/notepad_icon.png" alt="Notepad++"></a>
+    </body>
+{% endblock %}

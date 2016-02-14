@@ -1,0 +1,13 @@
+<!-- extend base layout -->
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Thermostat - Automatic</h1>
+    <body>
+        <p>Current Setpoint Temperature = {{setpoint}} deg F</p>
+        <form action="" method="post" name="setpoint">
+            {{ form.hidden_tag() }}
+            <p>Desired Temperature:  {{ form.setpoint(size=3) }}    <input type="submit" value="Enter"> </p>
+        </form>
+    </body>
+{% endblock %}
